@@ -1,0 +1,157 @@
+/* The sidebar menu */
+body {
+  font-family: "Lato", sans-serif;
+}
+
+/* Style the sidenav links and the dropdown button */
+.sidenav a,
+.dropdown-btn {
+  padding: 2px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  /* color: #1f2e10 ; */
+  display: block;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+
+.dropdown-btn:hover{
+background-color: rgb(31, 173, 38);
+}
+
+.sidenav a:hover{
+ color:  #fcfff9;
+}
+
+.dropdown-container {
+  display: none;
+  margin-left: 50px;
+  background-color: #42B0E2;
+}
+
+/* Optional: Style the caret down icon */
+.fa-caret-down {
+  float: right;
+  padding-right: 8px;
+}
+
+.sidebar {
+  height: 100%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  width: 0;
+  position: fixed;/* Stay in place */
+  z-index: 1;/* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #fcde67;
+  overflow-x: hidden;/* Disable horizontal scroll */
+  padding-top: 50px;
+  transition: 0.2s;/* 0.2 second transition effect to slide in the sidebar */
+}
+
+#myInput {
+  height: 23px;
+  width: 90%;
+}
+
+#main {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nav {
+  background-color: #fcde67;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  padding-right: 28px;
+  justify-content: right;
+  flex-wrap: wrap;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.title {
+  display: flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+li a {
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+}
+
+li {
+  float: right;
+  list-style-type: none;
+}
+
+/* #data {
+  position: relative;
+  margin-top: 30px;
+  margin-left:30px;
+  border-left:auto;
+  border-right:auto;
+} */
+#data{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 3px;
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  display: block;
+  transition: 0.2s;
+}
+
+/* When you mouse over the navigation links, change their color */
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 15px;
+  cursor: pointer;
+  background-color: rgb(30, 173, 38);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: rgb(10, 92, 35);
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main , #data{
+  transition: margin-left .5s;
+  /* If you want a transition effect */
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/* @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  } */

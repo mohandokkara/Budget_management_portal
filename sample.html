@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finance Management | MVGR</title>
+  <link rel="stylesheet" href="style1.css">
+
+</head>
+
+<body>
+
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <!-- <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+    <div class="sidenav">
+      <button class="dropdown-btn">Budget Proposal
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+          <a href="#" onclick="l1()" id="e1">Software</a>
+          <a href="#" onclick="l2()" id="e2">Equipment</a>
+          <a href="#" onclick="l3()" id="e3">Library</a>
+          <a href="#" onclick="l4()" id="e4">Maintenance</a>
+          <a href="#" onclick="l5()" id="e5">Rennovation/Relocation</a>
+          <a href="#" onclick="l6()" id="e6">R and D</a>
+          <a href="#" onclick="l7()" id="e7">Faculty Development</a>
+          <a href="#" onclick="l8()" id="e8">Student Development</a>
+          <a href="#" onclick="l9()" id="e9">Hospitality</a>
+          <a href="#" onclick="l10()" id="e10">Furniture</a>
+          <a href="#" onclick="l11()" id="e11">Proposal to Central Library</a>
+          <a href="#" onclick="l12()" id="e12">Any Other Items</a>
+      </div>
+	  <div>
+      <button class="dropdown-btn" onclick="window.open('dis.php','_self')" >Budget Proposal summary
+          <i class="fa fa-caret-down"></i>
+      </button>	
+	  </div>
+	 <div id="x2">
+				<a href="allocated.html" target="_self" class="dropdown-btn" onMouseOver="this.style.color='#5b09b9;'"
+					style="padding: 2px 8px 6px 16px;font-size:15px;font-family:Arial, Helvetica, sans-serif;">Budget
+					Allocated</a>
+			</div>
+	  
+	  
+      <button class="dropdown-btn" >Budget Utilization
+          <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-container">
+          <a href="soft.html" target="_self">Software</a>
+          <a href="equp.html" target="_self">Equipment</a>
+          <a href="lib.html" target="_self">Library</a>
+          <a href="main.html" target="_self">Maintenance</a>
+          <a href="ren.html" target="_self">Rennovation/Relocation</a>
+          <a href="rd.html" target="_self">R and D</a>
+          <a href="facul.html" target="_self">Faculty Development</a>
+          <a href="student.html" target="_self">Student Development</a>
+          <a href="hos.html" target="_self">Hospitality</a>
+          <a href="fur.html" target="_self">Furniture</a>
+          <a href="pr.html" target="_self">Proposal to Central Library</a>
+          <a href="any.html" target="_self">Any Other Items</a>
+      </div>
+	  </div>
+      <!--<button class="dropdown-btn" onclick="window.open('util.php')">Budget utilized summary
+          <i class="fa fa-caret-down"></i>
+      </button>	-->
+	  <div>
+				<a href="util.php" target="_self" class="dropdown-btn" onMouseOver="this.style.color='#5b09b9;'"
+					style="padding: 2px 8px 6px 16px;font-size:15px;font-family:Arial, Helvetica, sans-serif;">Utilization Summary</a>
+			</div>
+	  <div>
+				<a href="rep.php" target="_self" class="dropdown-btn" onMouseOver="this.style.color='#5b09b9;'"
+					style="padding: 2px 8px 6px 16px;font-size:15px;font-family:Arial, Helvetica, sans-serif;">Report</a>
+			</div>
+  </div>
+
+  </div>
+  <div id="main">
+
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+</div>
+  <div id="data">
+    
+  </div>
+  
+  
+  
+
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+
+    /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+      document.getElementById("main").style.marginLeft = "0";
+    }
+
+    // function filterFunction() {
+    //   var input, filter, ul, li, a, i;
+    //   input = document.getElementById("myInput");
+    //   filter = input.value.toUpperCase();
+    //   div = document.getElementById("mySidebar");
+    //   a = div.getElementsByTagName("a");
+    //   for (i = 0; i < a.length; i++) {
+    //     txtValue = a[i].textContent || a[i].innerText;
+    //     if (txtValue.toUpperCase().indexOf(filter) > -1) {
+    //       a[i].style.display = "";
+    //     } else {
+    //       a[i].style.display = "none";
+    //     }
+    //   }
+    // }
+
+
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+
+    function l1() {
+      document.getElementById("data").innerHTML ="<form action='pro.php' method='POST'><table cellpadding='8' align='center'><tr><tr><td><label>Laboratory</label><br></td><td><input type='number' name='number'/></td></tr><tr><td><label>Department office</label><br></td><td><input type='number' name='number1'/></td></tr><tr><td><label>Total</label></td><td><input type='number' name='number2'/></td></tr><tr><td><label>description</label></td><td><input type='text' name='text'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='submit'>Submit</button></td></tr></table></form>"}
+
+    function l2() {
+      document.getElementById("data").innerHTML ="<form action='prop2.php' method='POST'><table cellpadding='8' align='center'><tr><td>New Licenses</td><td><input type='number' name='n1'></td></tr><tr><td>Renewals</td><td><input type='number' name='n2'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n3'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n4'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n5'>Submit</button></td></tr></table></form>"}
+
+    function l3() {
+      document.getElementById("data").innerHTML ="<form action='prop3.php' method='POST'><table cellpadding='8' align='center'><tr><td>Books</td><td><input type='number' name='n1'></td></tr><tr><td>Magazines</td><td><input type='number' name='n2'></td></tr><tr><td>Online Services-Subscriptions</td><td><input type='number' name='n3'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n5'/></td></tr></tr><tr><td align='center' colspan='3'><button type='submit' name='n6'>Submit</button></td></tr></table></form>"}
+
+    function l4() {
+      document.getElementById("data").innerHTML ="<form action='prop4.php' method='POST'><table cellpadding='8' align='center'><tr><td>Laboratory Consumables</td><td><input type='number' name='n1'></td></tr><tr><td>Repairs</td><td><input type='number' name='n2'></td></tr><tr><td>Operational Cost</td><td><input type='number' name='n3'></td></tr><tr><td>Stationary</td><td><input type='number' name='n4'></td></tr><tr><td>Copier Maintenance Cost</td><td><input type='number' name='n5'></td></tr><tr><td>Printers Maintenance Cost</td><td><input type='number' name='n6'></td></tr><tr><td>Other Department Maintenance Cost</td><td><input type='number' name='n7'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n8'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n9'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n10'>Submit </button></td></tr></table></form>"}
+
+    function l5() {
+	  document.getElementById("data").innerHTML="<form action='prop5.php' method='POST'><table cellpadding='8' align='center'><tr><td>Laboratory</label></td><td><input type='number' name='n1'/></td></tr><tr><td><label>Department Office</label></td><td><input type='number' name='n2'/></td><tr><td><lbel>Total</label></td><td><input type='number' name='n3'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n4' /></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n5'>Submit</button></td></tr></table></form>"} 
+
+    function l6() {
+      //document.getElementById("data").innerHTML ="<form action='prop6.php' method='POST'><table cellpadding='8' align='center'><tr><td>R and D Investment Cost</td><td><input type='number' name='n1'></td></tr><tr><td>Investment in addon</td><td><input type='number' name='n2'></td></tr><tr><td>Internal R and D</td><td><input type='number' name='n3'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Discription</label></td><td><input type='text' name='n5'/></td></tr></tr><tr><td align='center' colspan='3'><button type='submit' name='n6'>Submit</button></td></tr></table></form>"}
+	  document.getElementById("data").innerHTML="<form action='prop6.php' method='POST'><table cellpadding='8' align='center'><tr><td><label>R and D Investment Cost</label></td><td><input type='number' name='n1'/></td></tr><tr><td><label>Investment in addon</td><td><input type='number' name='n2'/></td></tr><tr><td><label>Internal R and D</label</td><td><input type='number' name='n3'/></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n5'/></td></tr><tr><td colspan='3'><button type='submit' name='n6'>Submit</button></td></tr></table></form>"}
+    function l7() {
+      //document.getElementById("data").innerHTML ="<form action='prop7.php' method='POST'><table cellpadding='8' align='center'><tr><td>Seminars organised</td><td><input type='number' name='n1'></td></tr><tr><td>Seminars Participation</td><td><input type='number' name='n2'></td></tr><tr><td>Internships</td><td><input type='number' name='n3'></td></tr><tr><td>Industrial Visits</td><td><input type='number' name='n4'></td></tr><tr><td>Professional Body Registration-Instituitional</td><td><input type='number' name='n5'></td></tr><tr><td>Professional Body Registration-Faculty</td><td><input type='number' name='n6'></td></tr><tr><td>Research Incentives</td><td><input type='number' name='n7'></td></tr><tr><td><label>Total</label></td><td><input type='number'name='n8'/></td></tr><tr><td><label>Discription</label></td><td><input type='text' name='n9'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n10'>Submit</button></td></tr></table></form>"}
+	  document.getElementById("data").innerHTML="<form action='prop7.php' method='POST'><table cellpadding='8' align='center'><tr><td><label>Seminars Organised</td><td><input type='number' name='n1'/></td></tr><tr><td><label>Seminars Participation</label></td><td><input type='number' name='n2'/></td></tr><tr><td><label>Internships</label></td><td><input type='number' name='n3'/></td></tr><tr><td><label>Industrial Visits</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Professional Body Registration-Institutional</label></td><td><input type='number' name='n5'/></td></tr><tr><td><label>Professional Body Registration-faculty</label></td><td><input type='number' name='n6'/></td></tr><tr><td><label>Research Incentives</label></td><td><input type='number' name='n7'/></td></tr><tr><td><label>Total</abel></td><td><input type='number' name='n8'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n9'/></td></tr><tr><td><button type='submit' name='n10' >Submit</button></td></tr></table></form>"}
+    function l8() {
+      //document.getElementById("data").innerHTML ="<form action='prop8.php' method='POST'><table cellpadding='8' align='center'><tr><td>Participation in Seminars</td><td><input type='number' name='n1'></td></tr><tr><td>Industrial Visits</td><td><input type='number' name='n2'></td></tr><tr><td>Guest Lectures</td><td><input type='number' name='n3'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n5'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n6'>Submit</button></td></tr></table></form>"}
+	  document.getElementById("data").innerHTML="<form action='prop8.php' method='POST'><table cellpadding='8' align='center'><tr><td>Participation in Seminars</td><td><input type='number' name='n1'></td></tr><tr><td>Industrial Visits</td><td><input type='number' name='n2'></td></tr><tr><td>Guest Lectures</td><td><input type='number' name='n3'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n5'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n6'>Submit</button></td></tr></table></form>"}
+   
+    function l9() {
+      document.getElementById("data").innerHTML ="<form action='prop9.php' method='POST'><table cellpadding='8' align='center'><tr><td>Department Meetings</td><td><input type='number' name='n1'></td></tr><tr><td>Almin visits</td><td><input type='number' name='n2'></td></tr><tr><td>Visited Guests</td><td><input type='number' name='n3'></td></tr><tr><td>Parent Meetings</td><td><input type='number' name='n4'></td></tr><tr><td>Boss Meetings</td><td><input type='number' name='n5'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n6'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n7'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n8'>Submit</button></td></tr></table></form>"}
+
+    function l10() {
+      document.getElementById("data").innerHTML ="<form action='prop10.php' method='POST'><table cellpadding='8' align='center'><tr><td>Laboratory</td><td><input type='number' name='n1'/></td></tr><tr><td>Office</td><td><input type='number' name='n2'></td></tr><tr><td>Classrooms</td><td><input type='number' name='n3'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n4'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n5'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n6'>Submit</button></td></tr></table></form>"}
+
+    function l11() {
+      document.getElementById("data").innerHTML ="<form action='prop11.php' method='POST'><table cellpadding='8' align='center'><tr><td>Proposal to Central Library</td><td><input type='number' name='n1'></td></tr><tr><td>Journals</td><td><input type='number' name='n2'></td></tr><tr><td>Books</td><td><input type='number' name='n3'></td></tr><tr><td>Others</td><td><input type='number' name='n4'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n5'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n6'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n7'>Submit</button></td></tr></table></form>"}
+
+    function l12() {
+      //document.getElementById("data").innerHTML ="<form action='prop12.php' method='POST'> <table cellpadding='8' align='center'><tr><td>Any Other Items</td><td><input type='number' name='n1'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n2'/></td></tr><tr><td><label>Discription</label></td><td><input type='text' name='n3'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='4'>Submit</button></td></tr></table></form>";}
+	  document.getElementById("data").innerHTML="<form action='prop12.php' method='POST'><table cellpadding='8' align='center'><tr><td>Any other Items</td><td><input type='number' name='n1'></td></tr><tr><td><label>Total</label></td><td><input type='number' name='n2'/></td></tr><tr><td><label>Description</label></td><td><input type='text' name='n3'/></td></tr><tr><td align='center' colspan='3'><button type='submit' name='n4'>Submit</button></td></tr></table></form>";}
+	
+  </script>
+
+</body>
+
+</html>

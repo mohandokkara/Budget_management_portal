@@ -1,0 +1,62 @@
+<?php  
+ $connect = mysqli_connect("localhost", "root", "", "miniproject");  
+ $sql = "SELECT * FROM tab INNER JOIN tab1 ON tab.id = tab1.id"; 
+$result = mysqli_query($connect, $sql);  
+ ?>  
+ <!DOCTYPE html>  
+ <html>  
+      <head>  
+           <title>Webslesson Tutorial | Fetch Data from Two or more Table Join using PHP and MySql</title>  
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+      </head>  
+      <body>  
+           <br />  
+           <div class="container" style="width:500px;">  
+                <h3 align="">Fetch Data from Two or more Table Join using PHP and MySql</h3><br />                 
+                <div class="table-responsive">  
+                     <table class="table table-striped">  
+                          <tr>  
+                               <th>Software</th>  
+                               <th>Equipment</th>  
+							   <th>Library</th>  
+							   <th>Maintenance</th>  
+							   <th>Rennovation/Relocation</th>  
+							   <th>R&D</th>  
+							   <th>Faculty Development</th>  
+							   <th>Student Development</th>  
+							   <th>Hospitality</th>  
+							   <th>Furniture</th>  
+							   <th>Proposal to Central Library</th>  
+							   <th>Any Other Items</th>
+                          </tr>  
+                          <?php  
+                            
+                               while($row = mysqli_fetch_array($result))  
+                               {  
+                          ?>  
+                          <tr>  
+                               <td><?php echo $row["t1"];?></td>  
+                               <td><?php echo $row["t2"]; ?></td>  
+							   <td><?php echo $row["t3"];?></td>  
+                               <td><?php echo $row["t4"]; ?></td>
+							   <td><?php echo $row["t5"];?></td>  
+                               <td><?php echo $row["t6"]; ?></td>
+							   <td><?php echo $row["t7"];?></td>  
+                               <td><?php echo $row["t8"]; ?></td>
+							   <td><?php echo $row["t9"];?></td>  
+                               <td><?php echo $row["t10"]; ?></td>
+							   <td><?php echo $row["t11"];?></td>  
+                               <td><?php echo $row["t12"]; ?></td>
+                          </tr>  
+                          <?php  
+                               }  
+                           
+                          ?>  
+                     </table>  
+                </div>  
+           </div>  
+           <br />  
+      </body>  
+ </html>
